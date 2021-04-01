@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+    <head>
+        <title>Set Up</title>
+        <link rel="stylesheet" href="setup.css">
+    </head>
+
+    <body>
+    <div id="container">
+        <h1>Let's get you set up!</h1>
+        <p>Select the areas you want to work on:</p>
+        <div id="options">
+            <button class="option" onclick="chosen('mental health')" id="mental health"> mental health </button>
+            <button class="option" onclick="chosen('physical health')" id="physical health"> physical health </button>
+            <button class="option" onclick="chosen('sleep')" > sleep </button>
+            <button class="option" onclick="chosen('relationships')"> relationships </button>
+            <button class="option" onclick="chosen('work ethics')" id="work ethics"> work ethics </button>
+            <button class="option" onclick="chosen('self compassion')" id="self compassion"> self compassion </button>
+            <button class="option" onclick="chosen('personal finance')"> personal finance </button>
+            <button class="option" onclick="chosen('cutural identity')"> cultural identity </button>
+            <button class="option" onclick="chosen('academic wellness')"> academic wellness </button>
+        </div>
+        <button id="done" class="navigate" onclick="proceed()">
+            Finish set up
+        </button></br>
+        <button id="skip" class="navigate">
+            Skip set up – I will add my own areas later
+        </button>
+    </div>
+    </body>
+
+
+    <script>
+        function chosen(area){
+            document.getElementById(area).style.backgroundColor = "rgb(192,192,192)"
+        }
+
+        function proceed(){
+            window.location.href = 'http://127.0.0.1:5500/dashboard.html';
+        }
+    </script>
+</html>

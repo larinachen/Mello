@@ -1,0 +1,47 @@
+body {
+	background: #C27B68;
+	margin: 0px;
+	font-family: 'Nunito', sans-serif;
+    align-items: center;
+    margin: 10%;
+}
+
+.container{
+	width:30%;
+	height: 100%;
+	display: grid;
+	margin: auto;
+	padding: 10%;
+	align-items: center;
+	background-color: white;
+	border-radius: 7px;
+	box-shadow: 0px 0px 5px 2px black;
+}
+
+.container input{
+	margin: auto;
+	display: block;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	padding: 15px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.container button{
+	margin: auto;
+	box-sizing: border-box;
+	background:#C27B68;
+	color: white;
+	border: 0px;
+	border-radius: 5px;
+	padding: 15px;
+    width: 100%;
+	display: block;
+	
+	
+}
+
+.container h3{
+    text-align: center;
+}

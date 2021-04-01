@@ -1,0 +1,17 @@
+h1{
+    color: #C27B68;
+}
+
+.button{
+    background:#C27B68;
+    color:white;
+    border: 0px;
+	border-radius: 5px;
+}
+
+header{
+    display: flex;
+    list-style: none;
+    margin: 10px;
+    font-size: 0.7em;
+}

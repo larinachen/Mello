@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+    
+<body onload='show_existing()'>
+    <header class="header">
+        <button id="logout_button" class="button">Log out</button>
+        <button id="vision_board_button" class="button" onclick="navigate(this.id)">Vision Board</button>
+        <button id="guides_button" class="button" onclick="navigate(this.id)">Guides</button>
+        <button id="game_button" class="button" onclick="navigate(this.id)">My</button>
+        <p class="element">Mello</p>
+    </header>
+    
+    <div id='content'>
+        <div id='today'>
+            <span id='title'><h1>Today</h1><h4 id='date'></h4></span>
+            <div id='input'>
+                <select name='type' id='type'>
+                    <option value='Goal'>Goal</option>
+                    <option value='Achievement'>Achievement</option>
+                    <option value='Note'>Note</option>
+                </select>
+                <input id='input_category' type='text' placeholder='Category'/>
+                <button id='input_button' onclick="add_goal()">Add</button>
+                <input id='input_box' type='text' placeholder='What is it...'/>
+            </div>
+            <div id="scrollable"> </div>   
+
+        </div>
+        <div id='main'>
+            <button id="sidebar_button" onclick="toggle_sidebar()">>></button>
+            <div id="vision_board">
+                <h1>My Boards</h1>
+                <header id="header">
+                </br></br>
+                    <button id="area1" class="button" onclick="switch_board('area1')">Physical Health</button>
+                    <button id="area2" class="button" onclick="switch_board('area2')">Work Ethics</button>
+                    <button id="area3" class="button" onclick="switch_board('area3')">Self Compassion</button>
+                    <button id="add_button" class="button" onclick="add_board()">+</button>
+                </header>
+                <div id="area1_boards" class="grid-container">
+                        <div class="grid-item">No more all nighters!</div>
+                        <div class="grid-item">Read: Hacking Hydration by Tuesday</div>
+                        <div class="grid-item">Reminder: 10 mins of streching is SO DOABLE</div>  
+                        <div class="grid-item">Do a pullup by the end of June :)</div>
+                        <div class="add-item" id="area1_add_button" onclick="add_item('area1')"></br>+</div>
+                </div>
+                <div id="area2_boards" class="grid-container">
+                    <div class="grid-item">Example</div>
+                    <div class="grid-item">Example</div>
+                    <div class="add-item" id="area2_add_button" onclick="add_item('area2')"></br>+</div>
+                </div>
+                <div id="area3_boards" class="grid-container">
+                    <div class="grid-item">Reading</div>
+                    <div class="grid-item">Reminder</div>
+                    <div class="add-item" id="area3_add_button" onclick="add_item('area3')"></br>+</div>
+                </div>
+            </div>
+            <div id="calendar">
+                Calendar
+            </div>
+            <div id="guides">
+                <h1>Guides</h1>
+                <div id="area1_boards" class="grid-container">
+                    <div class="guide" onclick="location.href='https://www.nerdwallet.com/article/finance/budgeting-for-college-students'">Beginner Budgeting for College Students</div>
+                    <div class="guide">What the Hack is Emotional Wellbeing?</div>
+                    <div class="guide">Who to Seek Help From on Campus</div>  
+                    <div class="guide">Why "Instagram Wellbeing" is Kinda BS</div>
+                    <div class="guide">Building Your Support Network</div>  
+                    <div class="guide">How to Say "No!"</div>
+            </div>
+            </div>
+            <div id="game">
+                Game
+            </div>
+        </div>
+    </div>
+
+                <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-analytics.js"></script>
+
+<script src="firebase.js"></script>
+<script src="auth.js"></script>
+<script>
+    const logout_button = document.getElementById('logout_button');
+    logout_button.addEventListener("click",(e) => {
+    e.preventDefault();
+    auth.signOut().then(()=>{
+        alert('logging out');
+        window.location.href = 'http://127.0.0.1:5500/index.html';
+    });
+})
+</script>
+
+
+<script src='navigate.js'></script>
+<script src='today.js'></script>
+<script>
+    function add_close_button(){
+    var myNodelist = document.getElementsByClassName("goal_container");
+    var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+}
+</script>
+</body>
+
+</html>
