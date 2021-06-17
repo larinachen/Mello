@@ -1,6 +1,5 @@
 # Mello - Break it down. Make it Simple.
-Mello is my web development project under the TecHacks Fellowship program (also awarded 1st place project winner!). 
-Skills: front-end web development, UI design, Firebase, html/css/js, design process, pitching
+**Mello is my web development project under the TecHacks Fellowship program (also awarded 1st place project winner!). Skills: front-end web development, UI design, Firebase, html/css/js, design process, pitching**
 
 Mello is a web application that helps students commit to developing wellbeing skills and practices by making it simple. 
 We help users break down vague goals and elaborate plans into simple, concrete action items, and provides motivation and resources to help them do so.
