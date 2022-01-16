@@ -2,7 +2,7 @@
 **Mello is my web development project under the TecHacks Fellowship program (also awarded 1st place project winner!). Skills: front-end web development, UI design, Firebase, html/css/js, design process, pitching. 
 Thank you to Andrea Wu from Google for mentoring me on this project! You have been such a motivating force <3**
 
-![webpage screenshot](https://drive.google.com/file/d/1UnCJWr1FajPKcSfzDuvqjQqj39yINllZ/view?usp=sharing)
+![webpage screenshot](https://github.com/larinachen/Mello-Web-Application/blob/master/mello%20cover%20pic.png?raw=true)
 
 Mello is a web application that helps students commit to developing wellbeing skills and practices by making it simple. 
 We help users break down vague goals and elaborate plans into simple, concrete action items, and provides motivation and resources to help them do so.
