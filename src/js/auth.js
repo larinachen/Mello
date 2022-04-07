@@ -27,7 +27,7 @@ submit_button.addEventListener("click",(e) => {
   // sign up the user
   auth.createUserWithEmailAndPassword(email, password).then( cred => {
     //console.log("signed up");
-    window.location.href = 'http://127.0.0.1:5500/setup.html';
+    window.location.href = '../html/setup.html';
     signupform.reset();
   })
 })
