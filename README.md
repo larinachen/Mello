@@ -8,7 +8,7 @@
 **Scroll to see project description, feature list, project timeline**
 
 
-![webpage screenshot](https://github.com/larinachen/Mello-Web-Application/blob/master/mello%20cover%20pic.png?raw=true)
+![webpage screenshot](https://github.com/larinachen/Mello-Web-Application/blob/master/resources/mello%20cover%20pic.png?raw=true)
 
 
 ## The Application:
