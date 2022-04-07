@@ -1,3 +1,7 @@
+// grab elements
+const today = document.getElementById('today');
+const scrollable = document.getElementById('scrollable');
+
 // get the currently signed-in user
 let uid = "default";
 firebase.auth().onAuthStateChanged(function(user) {
@@ -16,9 +20,7 @@ let date = new Date();
 date_str =date.getDate() + "/ " + (date.getMonth()+1) + "/ " +date.getFullYear();
 date_title = document.getElementById('date');
 date_title.innerHTML=date_str;
-// grab elements
-const today = document.getElementById('today');
-const scrollable = document.getElementById('scrollable');
+
 
 // SHOW_EXISTING: upon loading, gets all items of the current user of today and show on list
 function show_existing(){
