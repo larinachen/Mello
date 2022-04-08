@@ -1,6 +1,6 @@
 # Mello - Wellness Web App
 **Mello is a full-stack web application for wellness journaling**
-* **tech stack**: JavaScript, HTML, CSS, Firebase API (Authentication, Firestore NoSQL Database), Git 
+* **tech stack**: JavaScript, HTML, CSS, Firebase API (Authentication, Firestore NoSQL Database), Git, npm, mocha
 * **skills**: front-end development, post/pull data from REST API, database organization, unit testing, git version control, documentation, UX/UI design
 * **awards**: 1st place (out of 50) at TecHacks fellowship showcase, accepted to TecHacks fellowship as a fellowship-funded project
 * **gratitude corner 💖**: Thank you to Andrea Wu from Google for mentoring me on code organization, debugging, & Firebase troubleshooting! Thank you to TecHacks for funding my project. Grateful for developer communities at DEV & CodePen for sources of help and inspiration <3
