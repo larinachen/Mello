@@ -16,16 +16,16 @@
 Mello is a web application that helps students commit to developing wellbeing skills and practices by making it simple. We help users break down vague goals and elaborate plans into simple, concrete action items, and provides motivation and resources to help them do so. 
 
 **Current Features**:
-* Daily wellness journal:
+* Daily wellness journal: keep track of your wellness goals, tasks, and achievements 
 
-* Vision board:
+* Vision board: keep your larger ideas & projects in your vision
 
-* Resources page: 
+* Resources page: browse wellness resources
 
 **Potential New Features**:
-* Community Page:
+* Community Page
 
-* Progress Tracking:
+* Progress Tracking
 
 
 
