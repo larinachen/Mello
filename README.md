@@ -22,11 +22,13 @@ Mello is a web application that helps students commit to developing wellbeing sk
 
 * Resources page: browse wellness resources
 
+* Game: take care of your Mello sprite by taking care of yourself <3
+
+
 **Potential New Features**:
 * Community Page
 
 * Progress Tracking
-
 
 
 
