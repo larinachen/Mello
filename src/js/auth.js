@@ -12,27 +12,64 @@ auth.onAuthStateChanged(user => {
 })
 */ 
 
-//sign up
-const signupform = document.getElementById("signup");
-const submit_button = document.getElementById("submit");
-submit_button.addEventListener("click",(e) => {
+// sign up
+function signup(){
+  const signupform = document.getElementById("signup");
+  const submit_button = document.getElementById("submit");
+  submit_button.addEventListener("click",(e) => {
   e.preventDefault();
+
   // get user info
   const email = document.querySelector('#signup-email').value;
   const password = document.querySelector('#signup-password').value;
+  
   // if username or password is unsatifactory
   if(password.length < 6){
-      alert("Invalid password: password must be more than 6 characters");
+    alert("Invalid password: password must be more than 6 characters");
   }
   // sign up the user
-  auth.createUserWithEmailAndPassword(email, password).then( cred => {
-    //console.log("signed up");
-    window.location.href = '../html/setup.html';
-    signupform.reset();
+  try{
+    auth.createUserWithEmailAndPassword(email, password).then( cred => {
+      window.location.href = '../html/setup.html';
+      signupform.reset();
+      })
+  }
+  catch(error){
+    alert(error)
+  }
   })
-})
+}
+
 
 // log in
+function login(){
+  // getting the html element
+  const loginform = document.getElementById('login');
+  const login_button = document.getElementById("login_button");
+  loginform.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  // get user login info
+  const email = document.querySelector('#login-email').value;
+  const password = document.querySelector('#login-password').value;
+  
+  // log in using Firebase
+  auth.signInWithEmailAndPassword(email, password).then(cred => {
+    alert('logging in');
+    window.location.href = '../html/dashboard.html';
+    signupform.reset();
+    });
+  })
+}
 
 
-// log out script is contained in dashboard.html on its own
+// log out
+function logout(){
+  const logout_button = document.getElementById('logout_button');
+    logout_button.addEventListener("click",(e) => {
+    e.preventDefault();
+    auth.signOut().then(()=>{
+      window.location.href = 'https://www.technologyreview.com/2022/04/19/1049378/ai-inequality-problem/';
+      })
+    })
+}

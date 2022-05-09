@@ -2,47 +2,31 @@
 <html>
 	<head>
 		<title>Login Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel='stylesheet' href='../css/auth.css'/>
+
+    <!-- Set up and config Firebase -->
+    <script type="text/javascript" src='../js/config.js' defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-auth.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-firestore.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-analytics.js"defer></script>
+    <script src="../js/firebase.js" defer></script>
+
+    <script src="../js/auth.js" defer></script>
 	</head>
 	
 	<body>
+    <!-- sign up form -->
 		<div id = 'login' class = container>
 			<h3>Log in</h3> 
+      <!-- user input elements-->
 			<input type='email' id="login-email" placeholder='your.email@mello.com'/> <br/>
 			<input type='password' id="login-password"/> <br/>
-			<button id='login_button'>Log in</button>
+			<button id='login_button' onclick="login()">Log in</button>
 		</div>
-    </body>
+  </body>
 
-            <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-firestore.js"></script>
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-analytics.js"></script>
-
-<script type="text/javascript" src='../js/config.js'></script>
-<script src="../js/firebase.js"></script>
-<script src="../js/auth.js"></script>
-
-<script>
-	const loginform = document.getElementById('login');
-const login_button = document.getElementById("login_button");
-loginform.addEventListener('click', (e) => {
-  e.preventDefault();
-  // get user info
-  const email = document.querySelector('#login-email').value;
-  const password = document.querySelector('#login-password').value;
-  // log in
-  auth.signInWithEmailAndPassword(email, password).then(cred => {
-    alert('logging in');
-    window.location.href = '../html/dashboard.html';
-    signupform.reset();
-  });
-})
-</script>
-
-</body>
     
 </html>

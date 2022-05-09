@@ -1,21 +1,33 @@
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;500;800&display=swap');
+
+html{
+    height: 100%;
+}
+
 body {
+	display: block;
+	font-family: 'Noto Sans', Arial, sans-serif;
+    height: 100%;
 	background: #C27B68;
 	margin: 0px;
 	font-family: 'Nunito', sans-serif;
     align-items: center;
-    margin: 10%;
 }
 
 .container{
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 	width:30%;
-	height: 100%;
-	display: grid;
+	height: 15em;
 	margin: auto;
+	margin-top: 5%;
 	padding: 10%;
 	align-items: center;
 	background-color: white;
-	border-radius: 7px;
-	box-shadow: 0px 0px 5px 2px black;
+	border-radius: 20px;
+	box-shadow: 0px 0px 5px 2px rgb(59, 59, 59);
 }
 
 .container input{
@@ -38,10 +50,13 @@ body {
 	padding: 15px;
     width: 100%;
 	display: block;
-	
-	
+	font-size: 0.8em;
 }
 
 .container h3{
+	margin-top: 0px;
+	margin-bottom: 30px;
     text-align: center;
+	font-size: 1.5em;
 }
+
