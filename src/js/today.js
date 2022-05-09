@@ -11,7 +11,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       //alert(uid);
     } else {
       //alert('You are not signed in');
-      window.location.href = '../index.html';
+      window.location.href = 'http://127.0.0.1:5500/index.html';
     }
   });
 
@@ -185,16 +185,3 @@ function add_item(board){
 }
 
 let list = document.getElementsByClassName("grid-item");
-
-
-function add_close_button(){
-    var myNodelist = document.getElementsByClassName("goal_container");
-    var i;
-    for (i = 0; i < myNodelist.length; i++) {
-        var span = document.createElement("SPAN");
-        var txt = document.createTextNode("\u00D7");
-        span.className = "close";
-        span.appendChild(txt);
-        myNodelist[i].appendChild(span);
-    }
-}
