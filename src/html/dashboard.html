@@ -3,7 +3,7 @@
     <title>Dashboard</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 
     <!-- Set up and config Firebase -->
     <script type="text/javascript" src='../js/config.js' defer></script>
@@ -16,20 +16,27 @@
     <script src="../js/auth.js" defer></script>
     <!-- app utility -->
     <script src='../js/navigate.js' defer></script>
-    <script src='../js/journal.js' defer></script>
+    <script src='../js/app.js' defer></script>
+
 </head>
     
-<body onload='show_existing()'>
-    <header class="header">
-        <button id="logout_button" class="button" onclick="logout()">Log out</button>
-        <button id="vision_board_button" class="button" onclick="navigate(this.id)">Vision Board</button>
-        <button id="guides_button" class="button" onclick="navigate(this.id)">Guides</button>
-        <button id="game_button" class="button" onclick="navigate(this.id)">My</button>
-        <p class="element">Mello</p>
+<body>
+    
+    <!-- app header -->
+    <header>
+        <!-- navigation bar -->
+        <nav>
+            <button id="logout_button" class="button" onclick="logout()">Log out</button>
+        </nav>
+        <h3>Mello</h3>
     </header>
     
-    <div id='content'>
-        <div id='today'>
+
+    <!-- main content of the app -->
+    <main>
+
+        <!-- daily journal: shows entries for the current day -->
+        <div id='dailyJournal' onload='showExisting()'>
             <span id='title'><h1>Today</h1><h4 id='date'></h4></span>
             <div id='input'>
                 <select name='type' id='type'>
@@ -37,45 +44,51 @@
                     <option value='Achievement'>Achievement</option>
                     <option value='Note'>Note</option>
                 </select>
-                <input id='input_category' type='text' placeholder='Category'/>
-                <button id='input_button' onclick="add_goal()">Add</button>
-                <input id='input_box' type='text' placeholder='What is it...'/>
+                <select name='type' id='category'>
+                    <option value='MentalHealth'>Mental Health</option>
+                    <option value='PhysicalHealth'>Physical Health</option>
+                    <option value='Productivity'>Productivity</option>
+                </select>
+                <!-- <input id='input_category' type='text' placeholder='Category'/> -->
+                <button id='inputButton' onclick="addEntry()">Add</button>
+                <input id='inputBox' type='text' placeholder='What is it...'/>
             </div>
             <div id="scrollable"> </div>   
-
         </div>
-        <div id='main'>
+
+        <!-- historial journal: shows categorized historical entries -->
+        <div id='historicalJournal'>
+            <!-- button: open/closes daily journal -->
             <button id="sidebar_button" onclick="toggle_sidebar()">>></button>
-            <div id="vision_board">
-                <h1>My Boards</h1>
+
+            <!-- view historical entries organized by date -->
+            <div id="entriesByDate">
+                <h1>My Past Entries</h1>
+
+                <!-- subheader -->
                 <header id="header">
                 </br></br>
-                    <button id="area1" class="button" onclick="switch_board('area1')">Physical Health</button>
-                    <button id="area2" class="button" onclick="switch_board('area2')">Work Ethics</button>
-                    <button id="area3" class="button" onclick="switch_board('area3')">Self Compassion</button>
-                    <button id="add_button" class="button" onclick="add_board()">+</button>
+                    <button id="area1" class="button" onclick="switch_board('area1')">Mental Health</button>
+                    <button id="area2" class="button" onclick="switch_board('area2')">Physical Health</button>
+                    <button id="area3" class="button" onclick="switch_board('area3')">Productivity</button>
+        
                 </header>
+                <!-- content -->
                 <div id="area1_boards" class="grid-container">
-                        <div class="grid-item">No more all nighters!</div>
-                        <div class="grid-item">Read: Hacking Hydration by Tuesday</div>
-                        <div class="grid-item">Reminder: 10 mins of streching is SO DOABLE</div>  
-                        <div class="grid-item">Do a pullup by the end of June :)</div>
-                        <div class="add-item" id="area1_add_button" onclick="add_item('area1')"></br>+</div>
+                        
                 </div>
                 <div id="area2_boards" class="grid-container">
-                    <div class="grid-item">Example</div>
-                    <div class="grid-item">Example</div>
-                    <div class="add-item" id="area2_add_button" onclick="add_item('area2')"></br>+</div>
+                   
                 </div>
                 <div id="area3_boards" class="grid-container">
-                    <div class="grid-item">Reading</div>
-                    <div class="grid-item">Reminder</div>
-                    <div class="add-item" id="area3_add_button" onclick="add_item('area3')"></br>+</div>
+                   
                 </div>
             </div>
+            
             <div id="calendar">
                 Calendar
             </div>
+
             <div id="guides">
                 <h1>Guides</h1>
                 <div id="area1_boards" class="grid-container">
@@ -86,31 +99,16 @@
                     <div class="guide">Building Your Support Network</div>  
                     <div class="guide">How to Say "No!"</div>
             </div>
-            </div>
+
             <div id="game">
                 Game
             </div>
+
         </div>
-    </div>
+    </main>
 
 
 
-
-
-
-<!-- <script>
-    function add_close_button(){
-    var myNodelist = document.getElementsByClassName("goal_container");
-    var i;
-    for (i = 0; i < myNodelist.length; i++) {
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    myNodelist[i].appendChild(span);
-    }
-}
-</script> -->
 
 </body>
 

@@ -1,42 +1,34 @@
-// listen for auth status changes
-/*
-auth.onAuthStateChanged(user => {
-  if(user){
-    alert(user);
-    window.location.href = 'http://127.0.0.1:5500/dashboard.html';
-  }
-  else{
-    alert(user);
-    // window.location.href = 'http://127.0.0.1:5500/index.html';
-  }
-})
-*/ 
+// FUNCTIONS FOR USER AUTHETICATION
+// functions:
+// signup(): signs up a new user using email and password.
+// login(): validates an existing user's credentials and logs in the user.
+// logout(): logs out the current user. Direct user back to landing page.
+
 
 // sign up
 function signup(){
-  const signupform = document.getElementById("signup");
-  const submit_button = document.getElementById("submit");
-  submit_button.addEventListener("click",(e) => {
-  e.preventDefault();
+  const signupForm = document.getElementById("signup");
+  const submitButton = document.getElementById("submit");
+  submitButton.addEventListener("click",(e) => {
+    //e.preventDefault(); // delay form submission
 
-  // get user info
-  const email = document.querySelector('#signup-email').value;
-  const password = document.querySelector('#signup-password').value;
-  
-  // if username or password is unsatifactory
-  if(password.length < 6){
-    alert("Invalid password: password must be more than 6 characters");
-  }
-  // sign up the user
-  try{
+    // get user info
+    const email = document.querySelector('#signup-email').value;
+    const password = document.querySelector('#signup-password').value;
+    
+    // if username or password is unsatifactory
+    if(password.length < 6){
+      alert("Invalid password: password must be more than 6 characters");
+    }
+
+    // sign up the user
     auth.createUserWithEmailAndPassword(email, password).then( cred => {
       window.location.href = '../html/setup.html';
-      signupform.reset();
-      })
-  }
-  catch(error){
-    alert(error)
-  }
+      signupForm.reset();
+      }).catch((error) => { 
+        // send alert with error message if sign up fails
+        alert(error.message)
+      });
   })
 }
 
@@ -44,32 +36,34 @@ function signup(){
 // log in
 function login(){
   // getting the html element
-  const loginform = document.getElementById('login');
-  const login_button = document.getElementById("login_button");
-  loginform.addEventListener('click', (e) => {
-  e.preventDefault();
+  const loginForm = document.getElementById('login');
+  const loginButton = document.getElementById("login_button");
+  loginButton.addEventListener('click', (e) => {
+    //e.preventDefault(); // delay form submission
 
-  // get user login info
-  const email = document.querySelector('#login-email').value;
-  const password = document.querySelector('#login-password').value;
-  
-  // log in using Firebase
-  auth.signInWithEmailAndPassword(email, password).then(cred => {
-    alert('logging in');
-    window.location.href = '../html/dashboard.html';
-    signupform.reset();
-    });
+    // get user login info
+    const email = document.querySelector('#login-email').value;
+    const password = document.querySelector('#login-password').value;
+    
+    // log in using Firebase
+    auth.signInWithEmailAndPassword(email, password).then(cred => {
+      alert('logging in');
+      window.location.href = '../html/dashboard.html';
+      }).catch((error) => {
+        // send alert with error message if log in fails
+        alert(error.message)
+      });
   })
 }
 
 
 // log out
 function logout(){
-  const logout_button = document.getElementById('logout_button');
-    logout_button.addEventListener("click",(e) => {
-    e.preventDefault();
+  const logoutButton = document.getElementById('logout_button');
+    logoutButton.addEventListener("click",(e) => {
+    //e.preventDefault(); //delay form submission
     auth.signOut().then(()=>{
-      window.location.href = 'https://www.technologyreview.com/2022/04/19/1049378/ai-inequality-problem/';
-      })
+      window.location.href = '../index.html';
+      });
     })
 }

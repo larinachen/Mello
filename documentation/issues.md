@@ -1,16 +1,19 @@
 ## Issues:
 
 ### Priority Issues:
+** DELETE **
 
+** UPDATE **
+
+see function descriptions in journal.js for more info
+
+### Other Issues:
 **Improve authentication handling**
 For sign up: currently, the requirement for password is simply a length requirement (length>6). There needs to be better requirements. There also needs to be better error handling (e.g. alerts for weak passwords, better error messages for unsuccessful signups)
 For log in: there needs to be better, more descriptive error messages (possiblly alerts) for when log in is unsuccessful
 
 **Log out issue**
 Currently, it takes 2 clicks on the Log Out button to log out. Fix so it takes only 1 click.
-
-### Other Issues:
-
 
 ### Project Timeline:
 Below is my project timeline for reference to give you an idea of where the project is currently at and the process behind it.

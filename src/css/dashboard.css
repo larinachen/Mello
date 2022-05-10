@@ -1,28 +1,33 @@
+
+
 body{
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
-#content{
+main{
     top: 50px;
     height: 100vh;
     display: flex;
     grid-template-columns: 40% 60%;
 }
 
-.header{
+header{
     display: flex;
     flex-flow: row;
     align-items: left;
     background-color:#D3B6AC ;
     height: 50px;
+    justify-content: space-between;
 }
 
-.header .element{
-    margin-left: 400px;
+header h3{
+    margin-right: 40px;
+    align-self: center;
 }
-.header .button{
+
+header .button{
     height: 75%;
     margin-top: 5px;
     margin-left: 10px;
@@ -31,23 +36,25 @@ body{
     border-radius: 15px;
 }
 
-#today{
-    background-color: #F1E9E1;
+
+/* Daily Journal CSS */
+#dailyJournal{
+    background-color: #FFF1EF;
     height: 100vh;
     width: 40%;
 }
 
-    #today #title{
+    #dailyJournal #title{
     display: flex;
     flex-flow: row;
     align-items: center;
     text-align: bottom;
     margin-left: 3%;
     }
-    #today #title #date{
+    #dailyJournal #title #date{
     margin-left:20px;
     }
-    #today #input{
+    #dailyJournal #input{
     margin: auto;
     margin-left: 3%;
     margin-right:3%;
@@ -57,53 +64,72 @@ body{
     height: 50px;
     bottom: 10px;
     }
-        #today #input_box{
+        #dailyJournal #inputBox{
         width: 97%;
         margin: 0%;
 	    display: block;
 	    border: 2px solid #ccc;
         height: 30px;
         }
-        #today #type{
+        #dailyJournal #type{
         width: 35%;
         }
-        #today #input_category{
+        #dailyJournal #category{
         width: 39%;
         }
-        #today #input_button{
+        #dailyJournal #inputButton{
         width: 20%;
         background-color: #D3B6AC;
         border: 0px;
         padding:2px;
         }
-    #today #scrollable{
+    #dailyJournal #scrollable{
         height: 67%;
         overflow-y: scroll;
         margin-top: 0px;
         margin-bottom: 10px;
     }
+
 .goal_container{
-    background-color:white;
-    margin: 3%;
+    background-color:#D9D9D9;
+    margin: auto;
+    margin-top: 10px;
     padding: 4%;
+    width: 80%;
 }
 .achievement_container{
-    background-color:#EFBF9E;
-    margin: 3%;
-    padding: 4%; 
+    background-color:#FAD0C4;
+    margin: auto;
+    margin-top: 10px;
+    padding: 4%;
+    width: 80%;
 }
 .note_container{
-    background-color:#EBEBEB;
-    margin: 3%;
-    padding: 4%; 
+    background-color:#DBCEE6;
+    margin: auto;
+    margin-top: 10px;
+    padding: 4%;
+    width: 80%;
 }
-.close{
-    position: relative;
-    float: right;
+.deleteButton{
+    margin-left: 80px;
+    text-align: end;
+    margin-right:0px;
+    width: 25px;
+    color:rgb(131, 130, 130);
+    overflow: hidden;
+}
+.doneButton{
+    margin-left: 20px;
+    text-align: end;
+    margin-right: 15px;
+    width: 25px;
+    color: rgb(131, 130, 130);
+    overflow: hidden;
 }
 
-
-#main{
+/* Historial Journal CSS */
+#historicalJournal{
     background-color: white;
     height: 97%;
     width: 100%;
@@ -116,27 +142,28 @@ body{
     border-radius: 5px;
     border-color:#EBEBEB;
 }
-    #main #vision_board{
+    #historicalJournal #entriesByDate{
         width: 100%;
         height: 100%;
         flex-direction:column;
     }
-    #main #vision_board h1{
-        width: 100%;
-        margin-left:5%;
-        margin-top: 0px;
-    }
-        #main #vision_board #header{
+        #entriesByDate h1{
+            width: 100%;
+            margin-left:5%;
+            margin-top: 0px;
+        }
+        #entriesByDate #header{
         width: 100%;
         margin-top: 0px;
         margin-left:5%;
         height: 7%;
-        display: block;
         display: flex;
+        justify-content: left;
         flex-flow: row;
         align-items: left;
+        background-color: white;
         }
-        #vision_board #header .button{
+        #entriesByDate #header .button{
             height: 90%;
             width: 150px;
             margin-right: 10px;
@@ -144,29 +171,19 @@ body{
             border-color: #EBEBEB;
             border-radius: 5px;
             border-width: 3px;
-            background: white;
+            background: rgb(239, 237, 237);
         }
-        #vision_board #header #area1{
-            height: 90%;
-            width: 150px;
-            margin-right: 10px;
-            box-sizing: border-box;
-            border-color: #C27B68;
-            border-radius: 5px;
-            border-width: 3px;
-            background: white;
-        }
-        .grid-item {
+        
+        #entriesByDate .grid-item {
             background-color: #F3F6F0;
             border: 0px;
             padding: 20px;
             font-size: 30px;
             text-align: center;
-            height: 250px;
             width: auto;
             border:0px;
           }
-        .add-item{
+        #entriesByDate .add-item{
             background-color: #F3F6F0;
             border: 0px;
             text-align: center;
@@ -176,31 +193,31 @@ body{
             padding: 20px;
             font-size: 60px;
         }
-        .grid-container {
+        #entriesByDate .grid-container {
             display: grid;
             margin-left: 3.5%;
             margin-right: 5%;
             height: 90%;
             grid-column-gap: 20px;
             grid-row-gap: 20px;
-            grid-template-columns: auto auto auto;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto auto auto auto;
             background-color: white;
             padding: 10px;
             overflow-y: scroll;
-            overflow-x: scroll;
           }
-    #main #calendar{
+    #historicalJournal #calendar{
         width: 100%;
         height: 100%;
         background-color: blue;
     }
 
-    #main #guides h1{
+    #historicalJournal #guides h1{
         width: 100%;
         margin-left:5%;
         margin-top: 0px;
     }
-    #main #guides{
+    #historicalJournal #guides{
         width: 100%;
         height: 100%;
         background-color: white;
@@ -217,7 +234,7 @@ body{
       }
 
 
-    #main #game{
+    #historicalJournal #game{
         width: 100%;
         height: 100%;
         background-color: yellow;
